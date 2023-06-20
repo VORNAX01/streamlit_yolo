@@ -38,7 +38,7 @@ if uploaded_file is not None:
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
   for index, row in detect_class.iterrows():
-    if row['xmax'] < 680:
+    if row['xmin'] < 1500:
       w += 1
   rest = "on the volley court" + str(w)
   st.text(rest)
