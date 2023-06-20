@@ -6,6 +6,7 @@ from PIL import Image
 import numpy as np
 import torch, json , cv2 , detect
 
+w = 0
 
 st.title("Human goes wild 🤴")
 
@@ -36,8 +37,11 @@ if uploaded_file is not None:
   
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
-  
-  
+  for index, row in detect_class.iterrows():
+    if row['xmin'] < 680:
+      w += 0
+
+  print(f"on the volley court has {w} people")
   #st.success(detect_class)
   
   outputpath = 'output.jpg'
