@@ -39,9 +39,9 @@ if uploaded_file is not None:
   
   for index, row in detect_class.iterrows():
     if row['xmax'] < 680:
-      w += 0
-
-  st.text("on the volley court has",{w}," people"))
+      w += 1
+  rest = "on the volley court" + str(w)
+  st.text(rest)
   #st.success(detect_class)
   
   outputpath = 'output.jpg'
