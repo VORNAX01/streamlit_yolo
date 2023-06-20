@@ -22,6 +22,7 @@ if uploaded_file is not None:
   image = cv2.imdecode(file_bytes, 1)
 
   imgRGB = cv2.cvtColor(image , cv2.COLOR_BGR2RGB)
+  h,w,c = imgRGB.shape
   #st.image(imgRGB)
 
   st.write("")
@@ -38,7 +39,7 @@ if uploaded_file is not None:
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
   for index, row in detect_class.iterrows():
-    if row['xmin'] < 1500:
+    if row['xmin'] < w/2:
       w += 1
   rest = "on the volley court" + str(w)
   st.text(rest)
