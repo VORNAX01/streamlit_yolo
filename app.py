@@ -23,7 +23,8 @@ if uploaded_file is not None:
 
   imgRGB = cv2.cvtColor(image , cv2.COLOR_BGR2RGB)
   #st.image(imgRGB)
-ty = imgRGB.shape[1] /2
+ty = imgRGB.shape[1] 
+cx = ty/2
   st.write("")
   st.write("Detecting...")
   result = model(imgRGB, size=600)
@@ -38,7 +39,7 @@ ty = imgRGB.shape[1] /2
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
   for index, row in detect_class.iterrows():
-    if row['xmin'] < ty:
+    if row['xmin'] < cx:
       w += 1
   rest = "on the volley court" + str(w)
   st.text(rest)
