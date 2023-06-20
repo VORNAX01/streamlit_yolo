@@ -41,7 +41,7 @@ if uploaded_file is not None:
     if row['xmax'] < 680:
       w += 0
 
-  print(f"on the volley court has {w} people")
+  st.text("on the volley court has",{w}," people"))
   #st.success(detect_class)
   
   outputpath = 'output.jpg'
