@@ -23,7 +23,7 @@ if uploaded_file is not None:
 
   imgRGB = cv2.cvtColor(image , cv2.COLOR_BGR2RGB)
   #st.image(imgRGB)
-ty = imgRGB.shape[1] 2
+ty = imgRGB.shape[1] /2
   st.write("")
   st.write("Detecting...")
   result = model(imgRGB, size=600)
