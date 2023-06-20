@@ -22,7 +22,6 @@ if uploaded_file is not None:
   image = cv2.imdecode(file_bytes, 1)
 
   imgRGB = cv2.cvtColor(image , cv2.COLOR_BGR2RGB)
-  h,w,c = imgRGB.shape
   #st.image(imgRGB)
 
   st.write("")
